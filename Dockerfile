@@ -10,6 +10,10 @@ RUN mkdir -p /usr/local/share/gemini
 RUN python gemini_install.py --nodata /usr/local /usr/local/share/gemini
 
 # Make it executable
-ENV PATH="/usr/local/gemini/bin:${PATH}"
+ENV PATH="/usr/local/bin/gemini:$PATH"
 
-ENTRYPOINT gemini
+# When the container is run, execute "gemini"
+ENTRYPOINT ["gemini"]
+
+# If no argument is specified, show help
+CMD ["-h"]
