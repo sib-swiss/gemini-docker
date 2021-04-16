@@ -16,6 +16,9 @@ ENV PATH="/usr/local/bin/gemini:$PATH"
 RUN apt-get update
 RUN apt-get install -y vim
 
+# Dirty patch the Pysam stuff that is not working with the automatic install
+COPY patch/annotations.py /usr/local/share/gemini/anaconda/lib/python2.7/site-packages/gemini/annotations.py
+
 # When the container is run, execute "gemini"
 ENTRYPOINT ["gemini"]
 
