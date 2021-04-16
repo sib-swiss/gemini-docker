@@ -20,7 +20,7 @@ Annotation:
 > The version tagged "-patched" includes a dirty fix that allows the annotation functionality to work,
 > at the expense of being able to read positions from BAM files (?) with Pysam.
 
-Assuming you annotation files are in a host directory `./gemini_data`
+Assuming your annotation files are in a host directory `./gemini_data`
 and your VFC source files (.vcf, .ped) are in `./datasets`
 ```
 docker run -it --rm --name gemini \
